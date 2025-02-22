@@ -5,7 +5,7 @@ kullanıcıyı username'e göre getir. Şu bilgileri kartta göster:
 
 h3 -personel info
 -name içindeki "title,first,last" (age formed text-muted )
--address:"city, state/country , postcode, street.name, street.number"
+-address:"city, state/country , street.name, street.number"
 
 h3 - contact info
 -phone number: cell
