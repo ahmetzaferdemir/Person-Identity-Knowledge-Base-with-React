@@ -1,6 +1,7 @@
 import React from 'react'
+import '../css/component.css'
 
-function GetPerson() {
+function GetUser() {
   return (
     <>
     <div className="container">
@@ -53,20 +54,14 @@ function GetPerson() {
                       Email <br /> <span className='p-1 text-muted fst-italic'>john.doe@example.com</span>
                     </div>
                 </div>
-
-
               </div>
             </div>
-          
           </div>
         </div>
-
-
-
       </div>
     </div>
     </>
   )
 }
 
-export default GetPerson
+export default GetUser

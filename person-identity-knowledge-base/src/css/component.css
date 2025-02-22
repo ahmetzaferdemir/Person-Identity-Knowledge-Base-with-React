@@ -1,0 +1,7 @@
+.menuDiv > div {
+    height: 60px;
+    min-height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

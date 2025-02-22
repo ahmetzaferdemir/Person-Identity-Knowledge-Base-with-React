@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import GetPerson from './components/GetPerson'
+import GetPerson from './components/GetUser'
+import Menu from './components/Menu'
 
 function App() {
 
   return (
     <>
+    <Menu />
     <GetPerson />
     </>
   )
