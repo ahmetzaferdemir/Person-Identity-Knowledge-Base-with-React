@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import '../css/component.css'
 import axios from "axios";
 
+import noProfile from '../assets/noprofile.png'
+
 function GetUser() {
 
   const [image, setImage] = useState("")
@@ -22,7 +24,7 @@ function GetUser() {
 
   const [email, setEmail] = useState("");
 
-
+  
   const URL = `http://localhost:3001/users`;
 
   const getUser = async () => {
@@ -44,20 +46,25 @@ function GetUser() {
 
             setId(response.data[i].login.salt);
 
-            setAddress(response.data[i].location.city +"," 
-              + response.data[i].location.state +"/"
+            setAddress(response.data[i].location.state +"," 
+              + response.data[i].location.city +"/"
               +response.data[i].location.country+"," +response.data[i].location.street.number+"," +response.data[i].location.street.name)
 
             setPhoneNumber(response.data[i].phone);
 
             setEmail(response.data[i].email)
+
+            setPassword("")
             break; 
         }
     }
 
     if (!foundUser) {
         alert("Wrong username or password");
+        setUsername("");
+        setPassword("")
     }
+
 };
 
   return (
@@ -81,12 +88,12 @@ function GetUser() {
           <div className="card p-3">
             <div className="row g-4">
               <div className="col-sm-12 col-md-4">
-                  <img src={image || "https://randomuser.me/api/portraits/men/79.jpg"} alt="random people" className="w-100 rounded d-block mx-auto"/>
+                  <img src={image || noProfile} alt="random people" className="w-100 rounded d-block mx-auto"/>
               </div>
 
               <div className="col-sm-12 col-md-8">
                 <div className="nameSurnameAge bg-light rounded">
-                    <h2 className='h2 p-2 border-bottom'>{nameSurname || "John Doe"} <span className='text-muted fst-italic fs-5'>{age || "(32)"}</span></h2>
+                    <h2 className='h2 p-2 border-bottom'>{nameSurname || "John Doe"} <span className='text-muted fst-italic fs-5'> {age || "(32)"}</span></h2>
                 </div>
 
                 <div className="row userInfo bg-warning rounded">
@@ -100,7 +107,7 @@ function GetUser() {
 
                 <div className="address mt-2">
                     <div className="addresss">                  
-                        Address <br /> <span className='p-1 text-muted fst-italic'>{address || "Zolochiv, Poltavska/Ukraine, 4908, Energetichna"}</span>
+                        Address <br /> <span className='p-1 text-muted fst-italic'>{address || "Poltavska, Zolochiv/Ukraine, 4908, Energetichna"}</span>
                     </div>
                 </div>
 
