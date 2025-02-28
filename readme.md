@@ -1,12 +1,4 @@
-kullanıcıyı username'e göre getir. Şu bilgileri kartta göster:
-
--picture
--username, password
-
-h3 -personel info
--name içindeki "title,first,last" (age formed text-muted )
--address:"city, state/country , street.name, street.number"
-
-h3 - contact info
--phone number: cell
--email
+Html CSS Bootstrap Javascript ve React kullanılmıştır.
+Json Placeholder kullanılarak fake api yaratılıp axios ile CRUD işlemleri yapılmıştır.
+Data sunucusunu çalıştırmak için: json-server --watch src/db.json  --port 3001
+React sunucusunu çalıştırmak için: npm run dev
